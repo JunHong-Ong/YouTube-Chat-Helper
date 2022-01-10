@@ -1,24 +1,27 @@
 {
-  "manifest_version": 2,
-  "version": "0.1",
-  "name": "YouTube Live Chat Helper",
+    "description": "Demonstrating webRequests",
+    "manifest_version": 2,
+    "name": "Chat Helper",
+    "version": "1.0",
+    
+    "background": {
+        "scripts": ["./scripts/background.js"]
+    },
 
-  "author": "Ong Jun Hong",
+    "content_scripts": [
+        {
+            "matches": ["https://www.youtube.com/*"],
+            "js": ["./scripts/content.js"]
+        }
+    ],
 
-  "background": {
-    "scripts": ["scripts/background.js"]
-  },
+    "permissions": [
+        "webRequest",
+        "https://www.youtube.com/*"
+    ],
 
-  "description": "Temporary description",
-
-  "permissions": [
-    "notifications"
-  ],
-
-  "content_scripts": [
-    {
-      "matches": ["https://www.youtube.com/*"],
-      "js": ["scripts/content.js"]
-    }
-  ]
-}
+    "web_accessible_resources": [
+        "./styles/styles.css"
+    ]
+  }
+  

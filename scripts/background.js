@@ -1,20 +1,27 @@
-function notify(message) {   
-    // Add badges and flairs for broadcaster, moderators and verified users
-    let title = message.author;
-    if (message.isVerified) {
-        title += " \u{2713}";
-    } else if (message.isModerator) {
-        // Better wrench image for moderator?
-        title += "\u{1F527}";
-    } else if (message.isOwner) {
-        title += " | Owner";
-    }
+"use-strict";
 
-    browser.notifications.create({
-        "type": "basic",
-        "title": title,
-        "message": message.content
-    });
+function temporaryName(requestDetails) {
+    if (requestDetails.type === "sub_frame") {
+        tabId = requestDetails.tabId;
+        videoUrl = requestDetails.originUrl;
+        iFrameSrc = requestDetails.url;
+        
+        console.log(requestDetails);
+        console.log(`Tab ID: ${tabId}\nVideo URL: ${videoUrl}\niframe source: ${iFrameSrc}`)
+
+        browser.tabs.sendMessage(
+            tabId,
+            {type: "sub_frame"}
+        )
+    }
 }
 
-browser.runtime.onMessage.addListener(notify);
+let tabId = 0;
+let youtube = "https://www.youtube.com/*";
+let videoUrl = "";
+let iFrameSrc = "";
+
+browser.webRequest.onBeforeSendHeaders.addListener(
+    temporaryName,
+    {urls: [youtube]}
+);

@@ -1,0 +1,103 @@
+/* Styling for chat message container */
+.chat-highlight-continer {
+    width: 400px;
+    height: auto;
+    max-height: 300px;
+    display: flex;
+    flex-direction: column;
+
+    position: fixed;
+    right: 12px;
+    bottom: 8px;
+    z-index: 999;
+
+    background-color: rgba(0, 0, 0, 0.5);
+    pointer-events: none;
+    overflow-y: hidden;
+}
+
+
+/* Styling for individual chat messages */
+
+.chat-message {
+    width: auto;
+    height: auto;
+    margin: 8px;
+    display: block flex;
+    flex-direction: row;
+
+    font-size: 16px;
+    color: white;
+}
+
+/* Profile picture circle 32px */
+#profile-pic {
+    width: 32px;
+    height: 32px;
+    flex: none;
+    display: inline;
+
+    position: relative;
+    left: 4px;
+}
+
+#profile-pic img {
+    width: 100%;
+    border-radius: 50%;
+}
+
+/* Size of chat message */
+#chat-message-content {
+    flex: auto;
+    display: inline;
+
+    padding: 0 4px 0 8px;
+}
+
+#chat-message-author {
+    margin: auto;
+    font-weight: 600;
+
+    position: relative;
+    left: 8px;
+}
+
+#chat-message-timestamp {
+    padding-left: 4px;
+}
+
+/* Name */
+span[type="owner"] {
+    color: black;
+    background-color: #ffd600;
+    border-radius: 3px;
+}
+
+span[type="moderator"] {
+    color: #4184f3;
+}
+
+span[type="member"] {
+    color: #2ba640;
+}
+
+span[type="verified"] {
+    color: #e9e9e9;
+    background-color: #606060;
+}
+
+.chat-badges-renderer {
+    width: 16px;
+    height: 16px;
+    display: inline-block;
+}
+
+
+#chat-message-message {
+    position: relative;
+    left: 8px;
+}
+
+#chat-message-message img {
+    width: 16px;
+}

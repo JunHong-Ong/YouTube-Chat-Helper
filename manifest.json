@@ -1,8 +1,10 @@
 {
-    "description": "Demonstrating webRequests",
+    "description": "YouTube Chat Helper",
     "manifest_version": 2,
     "name": "Chat Helper",
     "version": "1.0",
+
+    "author": "Ong Jun Hong",
     
     "background": {
         "scripts": ["./scripts/background.js"]

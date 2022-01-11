@@ -1,10 +1,15 @@
 /* Styling for chat message container */
 .chat-highlight-continer {
     width: 400px;
+
     height: auto;
     max-height: 300px;
     display: flex;
-    flex-direction: column;
+    flex-direction: column-reverse;
+
+    font-size: 15px;
+    line-height: 1;
+    color: white;
 
     position: fixed;
     right: 12px;
@@ -16,29 +21,22 @@
     overflow-y: hidden;
 }
 
-
-/* Styling for individual chat messages */
-
 .chat-message {
     width: auto;
     height: auto;
-    margin: 8px;
+    margin: 8px 4px 0 8px;
+
     display: block flex;
     flex-direction: row;
-
-    font-size: 16px;
-    color: white;
 }
 
-/* Profile picture circle 32px */
+#chat-message-content {
+    margin: 0 0 0 8px;
+}
+
 #profile-pic {
     width: 32px;
     height: 32px;
-    flex: none;
-    display: inline;
-
-    position: relative;
-    left: 4px;
 }
 
 #profile-pic img {
@@ -46,27 +44,6 @@
     border-radius: 50%;
 }
 
-/* Size of chat message */
-#chat-message-content {
-    flex: auto;
-    display: inline;
-
-    padding: 0 4px 0 8px;
-}
-
-#chat-message-author {
-    margin: auto;
-    font-weight: 600;
-
-    position: relative;
-    left: 8px;
-}
-
-#chat-message-timestamp {
-    padding-left: 4px;
-}
-
-/* Name */
 span[type="owner"] {
     color: black;
     background-color: #ffd600;
@@ -89,15 +66,18 @@ span[type="verified"] {
 .chat-badges-renderer {
     width: 16px;
     height: 16px;
-    display: inline-block;
+    margin: 0 4px;
+    display: inline flex;
+    vertical-align: text-bottom;
+    font-size: 0;
 }
 
-
-#chat-message-message {
-    position: relative;
-    left: 8px;
+#chat-message-author {
+    margin: 0 4px;
 }
 
-#chat-message-message img {
+#chat-message-message img{
     width: 16px;
+    margin: 0 4px;
+    vertical-align: text-bottom;
 }
